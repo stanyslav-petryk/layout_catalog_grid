@@ -8,22 +8,23 @@
   max-width: 944px;
   margin: 0 auto;
 
-  @media (max-width: 487px) {
-    grid-template-columns: $width-card;
-  }
-
-  @media (max-width: 767px) {
+  @media (min-width: 488px) {
     grid-template-columns: repeat(2, $width-card);
   }
 
-  @media (max-width: 1023px) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(3, $width-card);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, $width-card);
   }
 
   &__card {
     display: flex;
     justify-content: center;
     align-items: center;
+    $width-card: 200px;
     height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
