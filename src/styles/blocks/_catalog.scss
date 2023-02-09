@@ -3,18 +3,11 @@
   justify-content: center;
   grid-template-columns: $width-card;
   gap: 48px;
-  margin: 0 auto;
 
-  @media (min-width: 488px) {
-    grid-template-columns: repeat(2, $width-card);
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, $width-card);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, $width-card);
+  @each $width, $columns in $screens {
+    @media (min-width: $width) {
+      grid-template-columns: repeat($columns, $width-card);
+    }
   }
 
   &__card {
